@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Inventario_2.Models.AsientoContable>
+
+@{
+    ViewData["Title"] = "Contabilizar";
+}
+
+<h1 style="margin: auto; font-size: 2rem; font-weight: bold;">Contabilizar registro</h1>
+<br />
+@foreach (var item in Model)
+{
+    <form asp-controller="AsientoContables" asp-action="Contabilizar" method="post">
+        <div class="form-group">
+            <label asp-for="@item.Descripcion"></label>
+            <input asp-for="@item.Descripcion" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="@item.Auxiliar"></label>
+            <input asp-for="@item.Auxiliar" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="@item.CuentaDb"></label>
+            <input asp-for="@item.CuentaDb" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="@item.CuentaCr"></label>
+            <input asp-for="@item.CuentaCr" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="@item.Monto"></label>
+            <input asp-for="@item.Monto" class="form-control" />
+        </div>
+        <br />
+        <div>
+            <button class="btn btn-success" type="submit" style="margin-right: 5px;">Contabilizar</button>
+            <a asp-action="Index" class="btn btn-danger" style="margin-left: 5px;">Cancelar</a>
+        </div>
+    </form>
+}

@@ -1,0 +1,94 @@
+﻿@model Inventario_2.Models.Articulo
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<style>
+    h1 {
+        margin: auto;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .row {
+        margin-bottom: 20px;
+    }
+
+    .dl-horizontal {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+    }
+
+    .dt {
+        flex: 1;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .dd {
+        flex: 3;
+        margin-bottom: 5px;
+    }
+
+    .d-flex {
+        display: flex;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: #fff;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        color: #fff;
+    }
+</style>
+
+<h1>Detalles del registro</h1>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt class="dt">
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+        <dd class="dd">
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+        <dt class="dt">
+            @Html.DisplayNameFor(model => model.Existencia)
+        </dt>
+        <dd class="dd">
+            @Html.DisplayFor(model => model.Existencia)
+        </dd>
+        <dt class="dt">
+            @Html.DisplayNameFor(model => model.CostoUnitario)
+        </dt>
+        <dd class="dd">
+            @Html.DisplayFor(model => model.CostoUnitario)
+        </dd>
+        <dt class="dt">
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+        <dd class="dd">
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+        <dt class="dt">
+            @Html.DisplayNameFor(model => model.IdInventarioNavigation)
+        </dt>
+        <dd class="dd">
+            @Html.DisplayFor(model => model.IdInventarioNavigation.Descripcion)
+        </dd>
+    </dl>
+</div>
+<div class="d-flex">
+    <div style="margin-right: 5px;">
+        <a asp-action="Edit" asp-route-id="@Model?.IdArticulos" class="btn btn-primary">Editar</a>
+    </div>
+    <div style="margin-left: 5px;">
+        <a asp-action="Index" class="btn btn-secondary">Volver</a>
+    </div>
+</div>
